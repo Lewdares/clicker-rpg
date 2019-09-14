@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class OnButtonClick : MonoBehaviour
 {
 	public GameObject statusText;
 	public GameObject hpText;
 	public GameObject spriteEnemy;
+	public GameObject youFainted;
 	
 	//values used in the rest of the code
 	public static int AttackPower = 1;
@@ -48,6 +50,10 @@ public class OnButtonClick : MonoBehaviour
 			AttackBar.value = 0;
 			HPBar.value = HPBar.value - Random.Range(1.80f, 5.14f);
 		}
+		
+		if (HPBar.value <= 0) {
+			youFainted.SetActive(true);
+		}
 	}
 	
 	// This code happens when an user hits a piece of clothing
@@ -70,6 +76,10 @@ public class OnButtonClick : MonoBehaviour
 		hpText.GetComponent<Text>().color = Color.red;
 		GlobalCookies.expNumber = GlobalCookies.expNumber + 5;
 		spriteEnemy.GetComponent<Animation>().Play("GetHit");
+	}
+	
+	public void TryAgain () {
+		 SceneManager.LoadScene("SampleScene");
 	}
 	
 	public void ClickTheChest () {
