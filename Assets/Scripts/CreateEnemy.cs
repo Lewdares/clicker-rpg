@@ -16,6 +16,10 @@ public class CreateEnemy : MonoBehaviour
 	public GameObject statusText;
 	public string EnemyName = "unknown enemy";
 	
+	public GameObject dungeonText;
+	public static int DungeonFloor = 1;
+	public static int DungeonLevel = 1;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,9 @@ public class CreateEnemy : MonoBehaviour
 		
 		
 		oldHitPoints = new List<int>{100,100,100,100,100};
+		
+		dungeonText.GetComponent<Text>().text = "Dungeon " + DungeonLevel + " - " + DungeonFloor;
+		dungeonText.GetComponent<Animation>().Play("FadeInAndOutDungeon");
 
     }
 
@@ -114,6 +121,10 @@ public class CreateEnemy : MonoBehaviour
 			oldHitPoints[0] = GlobalCookies.HPCount[0];
 		}
 		
+		DungeonFloor = DungeonFloor + 1;
+		
+		dungeonText.GetComponent<Text>().text = "Dungeon " + DungeonLevel + " - " + DungeonFloor;
+		dungeonText.GetComponent<Animation>().Play("FadeInAndOutDungeon");
 		statusText.GetComponent<Text>().text = "A random " + EnemyName + " appears!";
 		statusText.GetComponent<Animation>().Play("TextFade");
 		DefeatedMonsterCheck.neverDone = true;

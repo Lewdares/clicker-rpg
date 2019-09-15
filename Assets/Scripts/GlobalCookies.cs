@@ -31,6 +31,7 @@ public class GlobalCookies : MonoBehaviour
 		LegDisplay = GameObject.Find("LegHP");
 		HPDisplay = new List<GameObject>{ChestDisplay,CrotchDisplay,HandDisplay,HeadDisplay,LegDisplay};
 		// If anyone else from Slimekitten sees this code: I'm sorry for the spaghetti code. I'm mashing shit together until it hopefully works right now
+		LvDisplay.GetComponent<Text>().text = "LV " + levelNumber;
 		HPCount = new List<int>{100,80,0,0,0};
 	}
 	

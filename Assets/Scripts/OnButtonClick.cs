@@ -11,6 +11,7 @@ public class OnButtonClick : MonoBehaviour
 	public GameObject hpText;
 	public GameObject spriteEnemy;
 	public GameObject youFainted;
+	public GameObject faintedText;
 	
 	//values used in the rest of the code
 	public static int AttackPower = 1;
@@ -52,6 +53,8 @@ public class OnButtonClick : MonoBehaviour
 		}
 		
 		if (HPBar.value <= 0) {
+			faintedText.GetComponent<Text>().text = "You made it through " + CreateEnemy.DungeonFloor + " floors.";
+			// code calls this "fainted text" but its actually amounttext in code
 			youFainted.SetActive(true);
 		}
 	}
@@ -79,7 +82,7 @@ public class OnButtonClick : MonoBehaviour
 	}
 	
 	public void TryAgain () {
-		 SceneManager.LoadScene("SampleScene");
+		Debug.Log("try again executed hehe");
 	}
 	
 	public void ClickTheChest () {
