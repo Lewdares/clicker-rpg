@@ -65,7 +65,11 @@ public class OnButtonClick : MonoBehaviour
 		hpText.GetComponent<Text>().text = "-" + AttackPower + " HP";
 		hpText.GetComponent<Animation>().Play("PunchedFade");
 		hpText.GetComponent<Text>().color = Color.white;
+		//if (CreateEnemy.DungeonBestScore >= CreateEnemy.DungeonFloor) {
 		GlobalCookies.expNumber = GlobalCookies.expNumber + 1;
+		/*} else {
+			GlobalCookies.expNumber = GlobalCookies.expNumber + (1 / CreateEnemy.DungeonBestScore);
+		}*/
 		spriteEnemy.GetComponent<Animation>().Play("GetHit");
 	}
 
@@ -77,7 +81,11 @@ public class OnButtonClick : MonoBehaviour
 		hpText.GetComponent<Text>().text = "-" + (CritPower) + " HP";
 		hpText.GetComponent<Animation>().Play("PunchedFade");
 		hpText.GetComponent<Text>().color = Color.red;
+		//if (CreateEnemy.DungeonBestScore >= CreateEnemy.DungeonFloor) {
 		GlobalCookies.expNumber = GlobalCookies.expNumber + 5;
+		/*} else {
+			GlobalCookies.expNumber = GlobalCookies.expNumber + (5 / CreateEnemy.DungeonBestScore);
+		}*/
 		spriteEnemy.GetComponent<Animation>().Play("GetHit");
 	}
 	

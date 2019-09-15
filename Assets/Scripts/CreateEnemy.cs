@@ -19,6 +19,7 @@ public class CreateEnemy : MonoBehaviour
 	public GameObject dungeonText;
 	public static int DungeonFloor = 1;
 	public static int DungeonLevel = 1;
+	public static int DungeonBestScore = 1;
 	
     // Start is called before the first frame update
     void Start()
@@ -122,6 +123,9 @@ public class CreateEnemy : MonoBehaviour
 		}
 		
 		DungeonFloor = DungeonFloor + 1;
+		if (DungeonBestScore != 999) {
+			DungeonBestScore = DungeonBestScore + 1;
+		}
 		
 		dungeonText.GetComponent<Text>().text = "Dungeon " + DungeonLevel + " - " + DungeonFloor;
 		dungeonText.GetComponent<Animation>().Play("FadeInAndOutDungeon");
