@@ -88,63 +88,66 @@ public class OnButtonClick : MonoBehaviour
 	public void ClickTheChest () {
 		
 		int critChance = Random.Range(0, RandomChance);
-		if (EventSystem.current.currentSelectedGameObject.name == "ChestBtn") {
-			if (GlobalCookies.HPCount[0] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[0] >= CritPower) {
-					GlobalCookies.HPCount[0] -= CritPower;
-					CriticalMinusHP();
-				}
-				else {
-					GlobalCookies.HPCount[0] -= AttackPower;
-					MinusHP();
-				}
-			}
-		}
-		else if (EventSystem.current.currentSelectedGameObject.name == "CrotchBtn") {
-			if (GlobalCookies.HPCount[1] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[1] >= CritPower) {
-					GlobalCookies.HPCount[1] -= CritPower;
-					CriticalMinusHP();
-				}
-				else {
-					GlobalCookies.HPCount[1] -= AttackPower;
-					MinusHP();
+		
+		if (MouseCursor.isSwordActive == true) {
+			if (EventSystem.current.currentSelectedGameObject.name == "ChestBtn") {
+				if (GlobalCookies.HPCount[0] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[0] >= CritPower) {
+						GlobalCookies.HPCount[0] -= CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[0] -= AttackPower;
+						MinusHP();
+					}
 				}
 			}
-		}
-		else if (EventSystem.current.currentSelectedGameObject.name == "HandBtn" || EventSystem.current.currentSelectedGameObject.name == "HandBtn2") {
-			if (GlobalCookies.HPCount[2] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[2] >= CritPower) {
-					GlobalCookies.HPCount[2] -= CritPower;
-					CriticalMinusHP();
-				}
-				else {
-					GlobalCookies.HPCount[2] -= AttackPower;
-					MinusHP();
-				}
-			}
-		}
-		else if (EventSystem.current.currentSelectedGameObject.name == "HeadBtn") {
-			if (GlobalCookies.HPCount[3] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[3] >= CritPower) {
-					GlobalCookies.HPCount[3] -= CritPower;
-					CriticalMinusHP();
-				}
-				else {
-					GlobalCookies.HPCount[3] -= AttackPower;
-					MinusHP();
+			else if (EventSystem.current.currentSelectedGameObject.name == "CrotchBtn") {
+				if (GlobalCookies.HPCount[1] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[1] >= CritPower) {
+						GlobalCookies.HPCount[1] -= CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[1] -= AttackPower;
+						MinusHP();
+					}
 				}
 			}
-		}
-		else if (EventSystem.current.currentSelectedGameObject.name == "LegBtn" || EventSystem.current.currentSelectedGameObject.name == "LegBtn2") {
-			if (GlobalCookies.HPCount[4] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[4] >= CritPower) {
-					GlobalCookies.HPCount[4] -= CritPower;
-					CriticalMinusHP();
+			else if (EventSystem.current.currentSelectedGameObject.name == "HandBtn" || EventSystem.current.currentSelectedGameObject.name == "HandBtn2") {
+				if (GlobalCookies.HPCount[2] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[2] >= CritPower) {
+						GlobalCookies.HPCount[2] -= CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[2] -= AttackPower;
+						MinusHP();
+					}
 				}
-				else {
-					GlobalCookies.HPCount[4] -= AttackPower;
-					MinusHP();
+			}
+			else if (EventSystem.current.currentSelectedGameObject.name == "HeadBtn") {
+				if (GlobalCookies.HPCount[3] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[3] >= CritPower) {
+						GlobalCookies.HPCount[3] -= CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[3] -= AttackPower;
+						MinusHP();
+					}
+				}
+			}
+			else if (EventSystem.current.currentSelectedGameObject.name == "LegBtn" || EventSystem.current.currentSelectedGameObject.name == "LegBtn2") {
+				if (GlobalCookies.HPCount[4] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[4] >= CritPower) {
+						GlobalCookies.HPCount[4] -= CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[4] -= AttackPower;
+						MinusHP();
+					}
 				}
 			}
 		}

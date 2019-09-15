@@ -60,9 +60,11 @@
      <Compile Include="Assets\Scripts\DestroyX\DestroyHand.cs" />
      <Compile Include="Assets\Scripts\DestroyX\DestroyHead.cs" />
      <Compile Include="Assets\Scripts\DestroyX\DestroyLeg.cs" />
+     <Compile Include="Assets\Scripts\EnableSwordCursor.cs" />
      <Compile Include="Assets\Scripts\EnemyLibrary.cs" />
      <Compile Include="Assets\Scripts\FollowOnYAxis.cs" />
      <Compile Include="Assets\Scripts\GlobalCookies.cs" />
+     <Compile Include="Assets\Scripts\MouseCursor.cs" />
      <Compile Include="Assets\Scripts\OnButtonClick.cs" />
      <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
