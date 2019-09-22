@@ -490,7 +490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: A random Placeholder GUY has appeared!
+  m_Text: A spider-assasain has appeared!
 --- !u!222 &57520692
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6044,8 +6044,7 @@ MonoBehaviour:
   hpText: {fileID: 631808962}
   spriteEnemy: {fileID: 1418475382}
   youFainted: {fileID: 1067679638}
-  faintedText: {fileID: 78532187}
-  RandomChance: 15
+  enemyHitYou: {fileID: 761381052}
   ExpBar: {fileID: 1307189963}
   AttackBar: {fileID: 172926432}
   HPBar: {fileID: 1516827907}

@@ -60,13 +60,13 @@ public class CreateEnemy : MonoBehaviour
 		this.gameObject.GetComponent<SpriteRenderer>().sprite = SpriteSelection[randomNum];
 		
 		if(randomNum == 0) {
-			EnemyName = "red placeholder guy";
+			EnemyName = "sexy spider assasain";
 		}
 		else if(randomNum == 1) {
-			EnemyName = "blue placeholder guy";
+			EnemyName = "cool spider assasain";
 		}
 		else if(randomNum == 2) {
-			EnemyName = "green placeholder guy";
+			EnemyName = "loving spider assasain";
 		}
 		else {
 			EnemyName = "unknown enemy";
@@ -130,7 +130,7 @@ public class CreateEnemy : MonoBehaviour
 		
 		dungeonText.GetComponent<Text>().text = "Dungeon " + DungeonLevel + " - " + DungeonFloor;
 		dungeonText.GetComponent<Animation>().Play("FadeInAndOutDungeon");
-		statusText.GetComponent<Text>().text = "A random " + EnemyName + " appears!";
+		statusText.GetComponent<Text>().text = "A " + EnemyName + " appears!";
 		statusText.GetComponent<Animation>().Play("TextFade");
 		DefeatedMonsterCheck.neverDone = true;
 	}
