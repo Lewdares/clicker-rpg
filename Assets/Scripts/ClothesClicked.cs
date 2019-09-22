@@ -8,6 +8,7 @@ public class ClothesClicked : MonoBehaviour
 	public GameObject statusText;
 	public GameObject hpText;
 	public GameObject spriteEnemy;
+	public GameObject pulsatingBox;
 	public int RandomChance = 15;
 	public Slider ExpBar;
 	public Slider AttackBar;
@@ -44,66 +45,71 @@ public class ClothesClicked : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
-		int critChance = Random.Range(0, RandomChance);
-		if (this.gameObject.name == "Chest") {
-			if (GlobalCookies.HPCount[0] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[0] >= OnButtonClick.CritPower) {
-					GlobalCookies.HPCount[0] -= OnButtonClick.CritPower;
-					CriticalMinusHP();
+		if (Cursor.visible == false) {
+			int critChance = Random.Range(0, RandomChance);
+			if (this.gameObject.name == "Chest") {
+				if (GlobalCookies.HPCount[0] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[0] >= OnButtonClick.CritPower) {
+						GlobalCookies.HPCount[0] -= OnButtonClick.CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[0] -= OnButtonClick.AttackPower;
+						MinusHP();
+					}
 				}
-				else {
-					GlobalCookies.HPCount[0] -= OnButtonClick.AttackPower;
-					MinusHP();
+			}
+			else if (this.gameObject.name == "Crotch") {
+				if (GlobalCookies.HPCount[1] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[1] >= OnButtonClick.CritPower) {
+						GlobalCookies.HPCount[1] -= OnButtonClick.CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[1] -= OnButtonClick.AttackPower;
+						MinusHP();
+					}
+				}
+			}
+			else if (this.gameObject.name == "Hand") {
+				if (GlobalCookies.HPCount[2] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[2] >= OnButtonClick.CritPower) {
+						GlobalCookies.HPCount[2] -= OnButtonClick.CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[2] -= OnButtonClick.AttackPower;
+						MinusHP();
+					}
+				}
+			}
+			else if (this.gameObject.name == "Head") {
+				if (GlobalCookies.HPCount[3] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[3] >= OnButtonClick.CritPower) {
+						GlobalCookies.HPCount[3] -= OnButtonClick.CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[3] -= OnButtonClick.AttackPower;
+						MinusHP();
+					}
+				}
+			}
+			else if (this.gameObject.name == "Leg") {
+				if (GlobalCookies.HPCount[4] != 0) {
+					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[4] >= OnButtonClick.CritPower) {
+						GlobalCookies.HPCount[4] -= OnButtonClick.CritPower;
+						CriticalMinusHP();
+					}
+					else {
+						GlobalCookies.HPCount[4] -= OnButtonClick.AttackPower;
+						MinusHP();
+					}
 				}
 			}
 		}
-		else if (this.gameObject.name == "Crotch") {
-			if (GlobalCookies.HPCount[1] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[1] >= OnButtonClick.CritPower) {
-					GlobalCookies.HPCount[1] -= OnButtonClick.CritPower;
-					CriticalMinusHP();
-				}
-				else {
-					GlobalCookies.HPCount[1] -= OnButtonClick.AttackPower;
-					MinusHP();
-				}
-			}
-		}
-		else if (this.gameObject.name == "Hand") {
-			if (GlobalCookies.HPCount[2] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[2] >= OnButtonClick.CritPower) {
-					GlobalCookies.HPCount[2] -= OnButtonClick.CritPower;
-					CriticalMinusHP();
-				}
-				else {
-					GlobalCookies.HPCount[2] -= OnButtonClick.AttackPower;
-					MinusHP();
-				}
-			}
-		}
-		else if (this.gameObject.name == "Head") {
-			if (GlobalCookies.HPCount[3] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[3] >= OnButtonClick.CritPower) {
-					GlobalCookies.HPCount[3] -= OnButtonClick.CritPower;
-					CriticalMinusHP();
-				}
-				else {
-					GlobalCookies.HPCount[3] -= OnButtonClick.AttackPower;
-					MinusHP();
-				}
-			}
-		}
-		else if (this.gameObject.name == "Leg") {
-			if (GlobalCookies.HPCount[4] != 0) {
-				if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[4] >= OnButtonClick.CritPower) {
-					GlobalCookies.HPCount[4] -= OnButtonClick.CritPower;
-					CriticalMinusHP();
-				}
-				else {
-					GlobalCookies.HPCount[4] -= OnButtonClick.AttackPower;
-					MinusHP();
-				}
-			}
+		else {
+			pulsatingBox.GetComponent<Animation>().Play("UseYourTools");
 		}
     }
 }
