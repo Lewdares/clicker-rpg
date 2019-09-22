@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ClothesClicked.cs" />
      <Compile Include="Assets\Scripts\CreateEnemy.cs" />
      <Compile Include="Assets\Scripts\DefeatedMonsterCheck.cs" />
      <Compile Include="Assets\Scripts\DestroyX\DestroyClothes.cs" />

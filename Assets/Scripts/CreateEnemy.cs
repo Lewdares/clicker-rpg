@@ -123,7 +123,8 @@ public class CreateEnemy : MonoBehaviour
 		}
 		
 		DungeonFloor = DungeonFloor + 1;
-		if (DungeonBestScore != 999) {
+		//this shit aint working and i dont know why
+		if (DungeonBestScore >= 1) {
 			DungeonBestScore = DungeonBestScore + 1;
 		}
 		

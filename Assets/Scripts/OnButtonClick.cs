@@ -96,9 +96,10 @@ public class OnButtonClick : MonoBehaviour
 	public void ClickTheChest () {
 		
 		int critChance = Random.Range(0, RandomChance);
+		Debug.Log("hi");
 		
 		if (MouseCursor.isSwordActive == true) {
-			if (EventSystem.current.currentSelectedGameObject.name == "ChestBtn") {
+			if (EventSystem.current.currentSelectedGameObject.name == "Chest") {
 				if (GlobalCookies.HPCount[0] != 0) {
 					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[0] >= CritPower) {
 						GlobalCookies.HPCount[0] -= CritPower;
@@ -110,7 +111,7 @@ public class OnButtonClick : MonoBehaviour
 					}
 				}
 			}
-			else if (EventSystem.current.currentSelectedGameObject.name == "CrotchBtn") {
+			else if (EventSystem.current.currentSelectedGameObject.name == "Crotch") {
 				if (GlobalCookies.HPCount[1] != 0) {
 					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[1] >= CritPower) {
 						GlobalCookies.HPCount[1] -= CritPower;
@@ -122,7 +123,7 @@ public class OnButtonClick : MonoBehaviour
 					}
 				}
 			}
-			else if (EventSystem.current.currentSelectedGameObject.name == "HandBtn" || EventSystem.current.currentSelectedGameObject.name == "HandBtn2") {
+			else if (EventSystem.current.currentSelectedGameObject.name == "Hand") {
 				if (GlobalCookies.HPCount[2] != 0) {
 					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[2] >= CritPower) {
 						GlobalCookies.HPCount[2] -= CritPower;
@@ -134,7 +135,7 @@ public class OnButtonClick : MonoBehaviour
 					}
 				}
 			}
-			else if (EventSystem.current.currentSelectedGameObject.name == "HeadBtn") {
+			else if (EventSystem.current.currentSelectedGameObject.name == "Head") {
 				if (GlobalCookies.HPCount[3] != 0) {
 					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[3] >= CritPower) {
 						GlobalCookies.HPCount[3] -= CritPower;
@@ -146,7 +147,7 @@ public class OnButtonClick : MonoBehaviour
 					}
 				}
 			}
-			else if (EventSystem.current.currentSelectedGameObject.name == "LegBtn" || EventSystem.current.currentSelectedGameObject.name == "LegBtn2") {
+			else if (EventSystem.current.currentSelectedGameObject.name == "Leg") {
 				if (GlobalCookies.HPCount[4] != 0) {
 					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[4] >= CritPower) {
 						GlobalCookies.HPCount[4] -= CritPower;
