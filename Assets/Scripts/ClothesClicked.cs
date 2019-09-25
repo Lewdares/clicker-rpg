@@ -45,7 +45,7 @@ public class ClothesClicked : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
-		if (Cursor.visible == false) {
+		if (MouseCursor.isSwordActive == true) {
 			int critChance = Random.Range(0, RandomChance);
 			if (this.gameObject.name == "Chest") {
 				if (GlobalCookies.HPCount[0] != 0) {
@@ -107,6 +107,9 @@ public class ClothesClicked : MonoBehaviour
 					}
 				}
 			}
+		}
+		else if (MouseCursor.isCharmActive == true) {
+			Debug.Log("TODO: charms");
 		}
 		else {
 			pulsatingBox.GetComponent<Animation>().Play("UseYourTools");

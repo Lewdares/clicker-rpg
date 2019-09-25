@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseCursor : MonoBehaviour
 {
 	public static bool isSwordActive = false;
+	public static bool isCharmActive = false;
 	
     // Start is called before the first frame update
     void Start()
@@ -16,9 +17,18 @@ public class MouseCursor : MonoBehaviour
     void Update()
     {
 		if (isSwordActive == true){
-			Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			transform.position = cursorPos;
-			Cursor.visible = false;
+			if (this.gameObject.name == "sword") {
+				Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				transform.position = cursorPos;
+				Cursor.visible = false;
+			}
+		}
+		else if (isCharmActive == true) {
+			if (this.gameObject.name == "charm") {
+				Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				transform.position = cursorPos;
+				Cursor.visible = false;
+			}
 		}
 		else {
 			Cursor.visible = true;
