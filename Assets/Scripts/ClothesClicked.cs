@@ -9,6 +9,7 @@ public class ClothesClicked : MonoBehaviour
 	public GameObject hpText;
 	public GameObject spriteEnemy;
 	public GameObject pulsatingBox;
+	public GameObject cgWindow;
 	public int RandomChance = 15;
 	public Slider ExpBar;
 	public Slider AttackBar;
@@ -109,7 +110,24 @@ public class ClothesClicked : MonoBehaviour
 			}
 		}
 		else if (MouseCursor.isCharmActive == true) {
-			Debug.Log("TODO: charms");
+			int TotalHP = GlobalCookies.HPCount[0] + GlobalCookies.HPCount[1] + GlobalCookies.HPCount[2] + GlobalCookies.HPCount[3] + GlobalCookies.HPCount[4];
+			if (TotalHP <= 30) {
+				hpText.SetActive(true);
+				hpText.GetComponent<Text>().text = "CHARMED!";
+				hpText.GetComponent<Animation>().Play("PunchedFade");
+				hpText.GetComponent<Text>().color = Color.magenta;
+				statusText.GetComponent<Text>().text = "You charmed the enemy!";
+				statusText.GetComponent<Animation>().Play("TextFade");
+				cgWindow.GetComponent<Animation>().Play("CGStart");
+			}
+			else {
+				hpText.SetActive(true);
+				hpText.GetComponent<Text>().text = "MISS!";
+				hpText.GetComponent<Animation>().Play("PunchedFade");
+				hpText.GetComponent<Text>().color = Color.yellow;
+				statusText.GetComponent<Text>().text = "Her HP is not low enough to charm her!";
+				statusText.GetComponent<Animation>().Play("TextFade");
+			}
 		}
 		else {
 			pulsatingBox.GetComponent<Animation>().Play("UseYourTools");
