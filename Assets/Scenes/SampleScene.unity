@@ -1834,6 +1834,7 @@ MonoBehaviour:
   ExpBar: {fileID: 1307189963}
   AttackBar: {fileID: 172926432}
   HPBar: {fileID: 1516827907}
+  MPBar: {fileID: 1396002718}
 --- !u!60 &424780330
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3422,6 +3423,7 @@ MonoBehaviour:
   ExpBar: {fileID: 1307189963}
   AttackBar: {fileID: 172926432}
   HPBar: {fileID: 1516827907}
+  MPBar: {fileID: 1396002718}
 --- !u!60 &839179121
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4796,6 +4798,7 @@ MonoBehaviour:
   ExpBar: {fileID: 1307189963}
   AttackBar: {fileID: 172926432}
   HPBar: {fileID: 1516827907}
+  MPBar: {fileID: 1396002718}
 --- !u!60 &1144310027
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7382,6 +7385,7 @@ MonoBehaviour:
   ExpBar: {fileID: 1307189963}
   AttackBar: {fileID: 172926432}
   HPBar: {fileID: 1516827907}
+  MPBar: {fileID: 1396002718}
 --- !u!60 &1625596030
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7806,6 +7810,7 @@ MonoBehaviour:
   ExpBar: {fileID: 1307189963}
   AttackBar: {fileID: 172926432}
   HPBar: {fileID: 1516827907}
+  MPBar: {fileID: 1396002718}
 --- !u!60 &1766001371
 PolygonCollider2D:
   m_ObjectHideFlags: 0

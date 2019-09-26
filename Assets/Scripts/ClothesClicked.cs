@@ -14,6 +14,7 @@ public class ClothesClicked : MonoBehaviour
 	public Slider ExpBar;
 	public Slider AttackBar;
 	public Slider HPBar;
+	public Slider MPBar;
 	
     // Start is called before the first frame update
     void Start()
@@ -113,6 +114,7 @@ public class ClothesClicked : MonoBehaviour
 			int TotalHP = GlobalCookies.HPCount[0] + GlobalCookies.HPCount[1] + GlobalCookies.HPCount[2] + GlobalCookies.HPCount[3] + GlobalCookies.HPCount[4];
 			if (TotalHP <= 30) {
 				hpText.SetActive(true);
+				MPBar.value = MPBar.value - 15f;
 				hpText.GetComponent<Text>().text = "CHARMED!";
 				hpText.GetComponent<Animation>().Play("PunchedFade");
 				hpText.GetComponent<Text>().color = Color.magenta;
@@ -122,6 +124,7 @@ public class ClothesClicked : MonoBehaviour
 			}
 			else {
 				hpText.SetActive(true);
+				MPBar.value = MPBar.value - 15f;
 				hpText.GetComponent<Text>().text = "MISS!";
 				hpText.GetComponent<Animation>().Play("PunchedFade");
 				hpText.GetComponent<Text>().color = Color.yellow;
