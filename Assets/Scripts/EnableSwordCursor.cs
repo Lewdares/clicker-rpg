@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class EnableSwordCursor : MonoBehaviour
 {
-	public GameObject mouseSword;
-	public GameObject mouseCharm;
+	
+	public static GameObject mouseSword;
+	public static GameObject mouseCharm;
+	public static GameObject swordHolder;
+	public static GameObject charmHolder;
 	
     // Start is called before the first frame update
     void Start()
     {
-        
+        mouseSword = GameObject.Find("sword");
+		mouseCharm = GameObject.Find("charm");
+		swordHolder = GameObject.Find("swordHolder");
+		charmHolder = GameObject.Find("charmHolder");
     }
 
     // Update is called once per frame
@@ -23,13 +29,13 @@ public class EnableSwordCursor : MonoBehaviour
 				//stop holding other items
 				if (MouseCursor.isCharmActive == true) {
 					MouseCursor.isCharmActive = false;
-					mouseCharm.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z); //TO-DO: it shouldn't be this.transform.position
+					mouseCharm.transform.position = new Vector3(charmHolder.transform.position.x, this.transform.position.y, this.transform.position.z); //TO-DO: it shouldn't be this.transform.position
 				}
 				Debug.Log("now holding sword");
 			}
 			else {
 				MouseCursor.isSwordActive = false;
-				mouseSword.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+				mouseSword.transform.position = new Vector3(swordHolder.transform.position.x, this.transform.position.y, this.transform.position.z);
 				Debug.Log("now not holding sword");
 			}
 		}
@@ -40,13 +46,13 @@ public class EnableSwordCursor : MonoBehaviour
 				//stop holding other items
 				if (MouseCursor.isSwordActive == true) {
 					MouseCursor.isSwordActive = false;
-					mouseSword.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z); //TO-DO: it shouldn't be this.transform.position
+					mouseSword.transform.position = new Vector3(swordHolder.transform.position.x, this.transform.position.y, this.transform.position.z); //TO-DO: it shouldn't be this.transform.position
 				}
 				Debug.Log("now holding charm");
 			}
 			else {
 				MouseCursor.isCharmActive = false;
-				mouseCharm.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+				mouseCharm.transform.position = new Vector3(charmHolder.transform.position.x, this.transform.position.y, this.transform.position.z);
 				Debug.Log("now not holding charm");
 			}
 		}
