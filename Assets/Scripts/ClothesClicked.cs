@@ -123,9 +123,9 @@ public class ClothesClicked : MonoBehaviour
 			}
 		}
 		else if (MouseCursor.isCharmActive == true) {
-			if (MPBar.value >= 0.30f) {
+			if (MPBar.value >= 0.25f) {
 				int TotalHP = GlobalCookies.HPCount[0] + GlobalCookies.HPCount[1] + GlobalCookies.HPCount[2] + GlobalCookies.HPCount[3] + GlobalCookies.HPCount[4];
-				if (TotalHP <= 30) {
+				if (TotalHP <= 35) {
 					//make cursor appear again
 					MouseCursor.isSwordActive = false;
 					MouseCursor.isCharmActive = false;

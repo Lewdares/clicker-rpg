@@ -32,7 +32,7 @@ public class CGDisappear : MonoBehaviour
 		GlobalCookies.HPCount[4] = 0;
 		
 		//recover mana
-		MPBar.value = MPBar.value + 30;
+		MPBar.value = MPBar.value + 0.75f;
 		
 		//message
 		statusText.GetComponent<Text>().text = "The enemy ran away! You recovered some Mana!";
