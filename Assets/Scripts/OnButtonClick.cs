@@ -19,6 +19,7 @@ public class OnButtonClick : MonoBehaviour
 	public Slider ExpBar;
 	public Slider AttackBar;
 	public Slider HPBar;
+	public Slider MPBar;
 	
 	void Start() {
 		hpText.SetActive(false);
@@ -45,6 +46,10 @@ public class OnButtonClick : MonoBehaviour
 		int TotalHP = GlobalCookies.HPCount[0] + GlobalCookies.HPCount[1] + GlobalCookies.HPCount[2] + GlobalCookies.HPCount[3] + GlobalCookies.HPCount[4];
 		if (TotalHP != 0 && AttackBar.value != 1) {
 			AttackBar.value = AttackBar.value + 0.008f;
+			
+		}
+		if (TotalHP != 0 && MPBar.value != 1) {
+			MPBar.value = MPBar.value + 0.0004f;
 			
 		}
 		else if (AttackBar.value == 1) {

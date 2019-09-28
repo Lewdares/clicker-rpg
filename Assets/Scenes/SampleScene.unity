@@ -6793,6 +6793,7 @@ MonoBehaviour:
   ExpBar: {fileID: 1307189963}
   AttackBar: {fileID: 172926432}
   HPBar: {fileID: 1516827907}
+  MPBar: {fileID: 1396002718}
 --- !u!1 &1452940087
 GameObject:
   m_ObjectHideFlags: 0
