@@ -44,21 +44,31 @@ public class OnButtonClick : MonoBehaviour
 		}
 		
 		int TotalHP = GlobalCookies.HPCount[0] + GlobalCookies.HPCount[1] + GlobalCookies.HPCount[2] + GlobalCookies.HPCount[3] + GlobalCookies.HPCount[4];
-		if (TotalHP != 0 && AttackBar.value != 1) {
-			AttackBar.value = AttackBar.value + 0.008f;
-			
-		}
 		if (TotalHP != 0 && MPBar.value != 1) {
 			MPBar.value = MPBar.value + 0.0004f;
 			
 		}
-		else if (AttackBar.value == 1) {
-			AttackBar.value = 0;
-			float enemyForce = Random.Range(1.80f, 5.14f);
-			HPBar.value = HPBar.value - enemyForce;
-			enemyHitYou.GetComponent<Text>().text = "-" + System.Math.Round(enemyForce, 2) + " HP";
-			enemyHitYou.GetComponent<Animation>().Play("EnemyHurtYou-A");
+		
+		if (TotalHP != 0 && AttackBar.value != 1) {
+			AttackBar.value = AttackBar.value + 0.008f;
 			
+		}
+		else if (AttackBar.value == 1) {
+			if (ClothesClicked.protectingWithShield == false) {
+				AttackBar.value = 0;
+				float enemyForce = Random.Range(1.80f, 5.14f);
+				HPBar.value = HPBar.value - enemyForce;
+				enemyHitYou.GetComponent<Text>().text = "-" + System.Math.Round(enemyForce, 2) + " HP";
+				enemyHitYou.GetComponent<Animation>().Play("EnemyHurtYou-A");
+				enemyHitYou.GetComponent<Text>().color = Color.white;
+			}
+			else {
+				AttackBar.value = 0;
+				enemyHitYou.GetComponent<Text>().text = "BLOCKED!";
+				enemyHitYou.GetComponent<Animation>().Play("EnemyHurtYou-A");
+				enemyHitYou.GetComponent<Text>().color = Color.red;
+				ClothesClicked.protectingWithShield = false;
+			}
 		}
 		
 		if (HPBar.value <= 0) {

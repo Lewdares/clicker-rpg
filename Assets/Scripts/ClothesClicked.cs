@@ -15,11 +15,13 @@ public class ClothesClicked : MonoBehaviour
 	public Slider AttackBar;
 	public Slider HPBar;
 	public Slider MPBar;
+	public GameObject shieldBlocked;
+	public static bool protectingWithShield = false;
 	
     // Start is called before the first frame update
     void Start()
     {
-        
+        shieldBlocked = GameObject.Find("shieldBlocked");
     }
 	
 	// This code happens when an user hits a piece of clothing
@@ -153,8 +155,10 @@ public class ClothesClicked : MonoBehaviour
 			}
 		}
 		else if (MouseCursor.isShieldActive == true) {
-			if (MPBar.value >= 0.15f) {	
+			if (MPBar.value >= 0.15f && protectingWithShield == false) {	
 				Debug.Log("test for shield");
+				protectingWithShield = true;
+				shieldBlocked.GetComponent<Animation>().Play("shieldBlocked");
 				MPBar.value = MPBar.value - 0.15f;
 			}
 		}
