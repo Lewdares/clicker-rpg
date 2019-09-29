@@ -165,7 +165,7 @@ public class ClothesClicked : MonoBehaviour
 		else if (MouseCursor.isFireActive == true) {
 			if (MPBar.value >= 0.20f) {
 				MPBar.value = MPBar.value - 0.20f;
-				int damageDealtByFire = Random.Range(5,10) + OnButtonClick.AttackPower;
+				int damageDealtByFire = Random.Range(8,15) + OnButtonClick.AttackPower;
 				if (this.gameObject.name == "Chest") {
 					if (GlobalCookies.HPCount[0] != 0) {
 						GlobalCookies.HPCount[0] -= damageDealtByFire;
