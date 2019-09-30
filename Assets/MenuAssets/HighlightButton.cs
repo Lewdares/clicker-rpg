@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HighlightButton : MonoBehaviour
 {
@@ -17,10 +18,18 @@ public class HighlightButton : MonoBehaviour
     {
         Debug.Log("bye :0");
     }
+	
+	// this happens when you click on the "play game" btn
+	IEnumerator PlayGame()
+	{
+		transBar.GetComponent<Animation>().Play("transitionmenu");
+		yield return new WaitForSeconds (0.8f);
+		SceneManager.LoadScene("SampleScene");
+	}
 	void OnMouseDown()
 	{
 		if (this.gameObject.name == "StartButton") {
-		transBar.GetComponent<Animation>().Play("transitionmenu"); 
+			StartCoroutine (PlayGame()); 
 		}
 		else if (this.gameObject.name == "PatreonButton") {
 			//i want to elaborate more on this but whatever
