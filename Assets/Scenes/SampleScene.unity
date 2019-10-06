@@ -3356,7 +3356,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &821845449
@@ -6734,8 +6734,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpriteSelection:
   - {fileID: 21300000, guid: cce2f993d08f83447a09ec6d43231841, type: 3}
-  - {fileID: 21300000, guid: cce2f993d08f83447a09ec6d43231841, type: 3}
-  - {fileID: 21300000, guid: cce2f993d08f83447a09ec6d43231841, type: 3}
+  - {fileID: 21300000, guid: c29f26caa2958f1499d7362df6e6ea52, type: 3}
+  - {fileID: 21300000, guid: cad93d1ad1743f54fb0fc4833e17c8c8, type: 3}
   oldHitPoints: 
   chest: {fileID: 0}
   crotch: {fileID: 0}
@@ -6745,6 +6745,7 @@ MonoBehaviour:
   statusText: {fileID: 57520689}
   EnemyName: unknown enemy
   dungeonText: {fileID: 1452940087}
+  enemy: {fileID: 11400000, guid: 899f1682de75a904d8cf03c404031fe3, type: 2}
 --- !u!1 &1430738551
 GameObject:
   m_ObjectHideFlags: 0

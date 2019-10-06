@@ -21,9 +21,13 @@ public class CreateEnemy : MonoBehaviour
 	public static int DungeonLevel = 1;
 	public static int DungeonBestScore = 1;
 	
+	public Enemies enemy;
+	
+	
     // Start is called before the first frame update
     void Start()
     {
+		
 		// change to an unity list l8r
         chest = GameObject.Find("Chest");
 		crotch = GameObject.Find("Crotch");

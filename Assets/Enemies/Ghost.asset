@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d77685d70a97214d9f524280719fb54, type: 3}
+  m_Name: Ghost
+  m_EditorClassIdentifier: 
+  name: 
+  chest:
+  - {fileID: 21300000, guid: 9c58870544fad434a91d81c2bf4d9218, type: 3}
+  - {fileID: 21300000, guid: 0295a7de7f082174c84c1874beff98c8, type: 3}
+  - {fileID: 21300000, guid: 2f594dca09ecff2488f7c775976cd466, type: 3}
+  arm:
+  - {fileID: 21300000, guid: 8592e51696b50014eadf9dafae00d6cb, type: 3}
+  - {fileID: 21300000, guid: 5bd8c4376a8265247b4a935d576cbe62, type: 3}
+  - {fileID: 21300000, guid: 416c45dc2422bff43b66ab778b11d7bd, type: 3}
+  leg: []
+  head: []
+  crotch:
+  - {fileID: 21300000, guid: a271c9e57fbc34748892ea2f5788139b, type: 3}
+  - {fileID: 21300000, guid: f46bf00fcb27bf242a22ab26809b811a, type: 3}
+  - {fileID: 21300000, guid: 255b5e3ca91492c46be6d3a839e26457, type: 3}
