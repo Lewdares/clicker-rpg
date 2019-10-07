@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemies : ScriptableObject {
 	
 	public new string name;
+	public Sprite body;
 	
 	public List<Sprite> chest;
 	public List<Sprite> arm;

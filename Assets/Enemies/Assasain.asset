@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Assasain
   m_EditorClassIdentifier: 
   name: Assasain
+  body: {fileID: 21300000, guid: 4c53e21c3b38bc948bc99a7c9f12798a, type: 3}
   chest:
   - {fileID: 21300000, guid: 6c304993e75259b49b3c93dd7c10b2e6, type: 3}
   - {fileID: 21300000, guid: 73c4b3bb3e6a5bf459b40143fb6f824d, type: 3}

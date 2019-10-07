@@ -6737,11 +6737,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c29f26caa2958f1499d7362df6e6ea52, type: 3}
   - {fileID: 21300000, guid: cad93d1ad1743f54fb0fc4833e17c8c8, type: 3}
   oldHitPoints: 
-  chest: {fileID: 0}
-  crotch: {fileID: 0}
-  hand: {fileID: 0}
-  head: {fileID: 0}
-  leg: {fileID: 0}
+  chest: {fileID: 1766001366}
+  crotch: {fileID: 1625596025}
+  hand: {fileID: 839179116}
+  head: {fileID: 424780325}
+  leg: {fileID: 1144310022}
   statusText: {fileID: 57520689}
   EnemyName: unknown enemy
   dungeonText: {fileID: 1452940087}
@@ -8034,9 +8034,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07d216aaa76aa74d8ecb901534f277f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  completeSprite: {fileID: 21300000, guid: 7b3b4d390f6b26147990523c060ec3da, type: 3}
-  halfSprite: {fileID: 21300000, guid: 5a1724693e69fe24d9ca88cc4e35d13f, type: 3}
-  almostSprite: {fileID: 21300000, guid: aff4ad6e39044884a9cde3a4c0fa66c5, type: 3}
+  completeSprite: {fileID: 21300000, guid: 6c304993e75259b49b3c93dd7c10b2e6, type: 3}
+  halfSprite: {fileID: 21300000, guid: 73c4b3bb3e6a5bf459b40143fb6f824d, type: 3}
+  almostSprite: {fileID: 21300000, guid: 670d291600b5a0e4bbc459969a1331b9, type: 3}
   halfBreakingPoint: 0
   almostBreakingPoint: 0
 --- !u!114 &1766001370

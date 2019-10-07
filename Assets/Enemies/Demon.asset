@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Demon
   m_EditorClassIdentifier: 
   name: Demon
+  body: {fileID: 21300000, guid: c29f26caa2958f1499d7362df6e6ea52, type: 3}
   chest:
   - {fileID: 21300000, guid: eaf80ea15338ed846a672c90fff18d93, type: 3}
   - {fileID: 21300000, guid: 73b88409a4752d54ba0305efa783dae5, type: 3}

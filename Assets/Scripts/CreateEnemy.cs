@@ -61,7 +61,50 @@ public class CreateEnemy : MonoBehaviour
 		yield return new WaitForSeconds (1.5f);
 		
 		var randomNum = Random.Range(0,SpriteSelection.Count);
-		this.gameObject.GetComponent<SpriteRenderer>().sprite = SpriteSelection[randomNum];
+		this.gameObject.GetComponent<SpriteRenderer>().sprite = enemy.body;
+		
+		DestroyClothes chestcode = chest.GetComponent<DestroyClothes>();
+		DestroyCrotch crotchcode = crotch.GetComponent<DestroyCrotch>();
+		DestroyHand armcode = hand.GetComponent<DestroyHand>();
+		DestroyLeg legcode = leg.GetComponent<DestroyLeg>();
+		DestroyHead headcode = head.GetComponent<DestroyHead>();
+		
+		if (enemy.chest.Count > 0) {
+		chest.GetComponent<SpriteRenderer>().sprite = enemy.chest[0];
+		
+		chestcode.completeSprite = enemy.chest[0];
+		chestcode.halfSprite = enemy.chest[1];
+		chestcode.almostSprite = enemy.chest[2];
+		}
+		if (enemy.crotch.Count > 0) {
+		crotch.GetComponent<SpriteRenderer>().sprite = enemy.crotch[0];
+		
+		crotchcode.completeSprite = enemy.crotch[0];
+		crotchcode.halfSprite = enemy.crotch[1];
+		crotchcode.almostSprite = enemy.crotch[2];
+		}
+		if (enemy.arm.Count > 0) {
+		hand.GetComponent<SpriteRenderer>().sprite = enemy.arm[0];
+		
+		armcode.completeSprite = enemy.arm[0];
+		armcode.halfSprite = enemy.arm[1];
+		armcode.almostSprite = enemy.arm[2];
+		}
+		if (enemy.leg.Count > 0) {
+		leg.GetComponent<SpriteRenderer>().sprite = enemy.leg[0];
+		
+		legcode.completeSprite = enemy.leg[0];
+		legcode.halfSprite = enemy.leg[1];
+		legcode.almostSprite = enemy.leg[2];
+		}
+		if (enemy.head.Count > 0) {
+		head.GetComponent<SpriteRenderer>().sprite = enemy.head[0];
+		
+		headcode.completeSprite = enemy.head[0];
+		headcode.halfSprite = enemy.head[1];
+		headcode.almostSprite = enemy.head[2];
+		}
+		
 		
 		if(randomNum == 0) {
 			EnemyName = "sexy spider assasain";
