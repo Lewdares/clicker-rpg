@@ -1818,6 +1818,7 @@ GameObject:
   - component: {fileID: 424780327}
   - component: {fileID: 424780329}
   - component: {fileID: 424780330}
+  - component: {fileID: 424780331}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -1977,6 +1978,40 @@ PolygonCollider2D:
       - {x: -2.0349998, y: 4.6349998}
       - {x: -1.9749999, y: 4.795}
       - {x: -1.935, y: 4.9249997}
+--- !u!114 &424780331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424780325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c55c83d4c4dd1145ad5fbbab3c3df36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlphaTolerance: 20
+  DistanceThreshold: 8
+  Scale: 1
+  Decompose: 0
+  RunInPlayMode: 1
+  UseCache: 0
+  lastAlphaTolerance: 20
+  lastScale: 1
+  lastDistanceThreshold: 8
+  lastDecompose: 0
+  lastSprite: {fileID: 21300000, guid: c447acc5dd9720b459b3baba9db11833, type: 3}
+  lastRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1413
+    height: 1521
+  lastOffset: {x: 706.5, y: 760.5}
+  lastPixelsPerUnit: 100
+  lastFlipX: 0
+  lastFlipY: 0
+  editorCache: []
 --- !u!1 &426470536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,6 +3443,7 @@ GameObject:
   - component: {fileID: 839179118}
   - component: {fileID: 839179121}
   - component: {fileID: 839179120}
+  - component: {fileID: 839179122}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -3695,6 +3731,40 @@ PolygonCollider2D:
       - {x: 0.655, y: 2.5149999}
       - {x: 0.73499995, y: 2.605}
       - {x: 0.745, y: 2.685}
+--- !u!114 &839179122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839179116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c55c83d4c4dd1145ad5fbbab3c3df36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlphaTolerance: 20
+  DistanceThreshold: 8
+  Scale: 1
+  Decompose: 0
+  RunInPlayMode: 1
+  UseCache: 0
+  lastAlphaTolerance: 20
+  lastScale: 1
+  lastDistanceThreshold: 8
+  lastDecompose: 0
+  lastSprite: {fileID: 21300000, guid: f2fe22ef3ac4587498bd96823049370a, type: 3}
+  lastRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1413
+    height: 1521
+  lastOffset: {x: 706.5, y: 760.5}
+  lastPixelsPerUnit: 100
+  lastFlipX: 0
+  lastFlipY: 0
+  editorCache: []
 --- !u!1 &851925324
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,6 +4855,7 @@ GameObject:
   - component: {fileID: 1144310024}
   - component: {fileID: 1144310026}
   - component: {fileID: 1144310027}
+  - component: {fileID: 1144310028}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -5265,6 +5336,40 @@ PolygonCollider2D:
       - {x: 0.875, y: -2.105}
       - {x: 0.945, y: -2.215}
       - {x: 0.965, y: -2.225}
+--- !u!114 &1144310028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144310022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c55c83d4c4dd1145ad5fbbab3c3df36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlphaTolerance: 20
+  DistanceThreshold: 8
+  Scale: 1
+  Decompose: 0
+  RunInPlayMode: 1
+  UseCache: 0
+  lastAlphaTolerance: 20
+  lastScale: 1
+  lastDistanceThreshold: 8
+  lastDecompose: 0
+  lastSprite: {fileID: 21300000, guid: f3a5887c4cc237441951600bcc2276aa, type: 3}
+  lastRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1413
+    height: 1521
+  lastOffset: {x: 706.5, y: 760.5}
+  lastPixelsPerUnit: 100
+  lastFlipX: 0
+  lastFlipY: 0
+  editorCache: []
 --- !u!1 &1180199924
 GameObject:
   m_ObjectHideFlags: 0
@@ -7408,6 +7513,7 @@ GameObject:
   - component: {fileID: 1625596027}
   - component: {fileID: 1625596029}
   - component: {fileID: 1625596030}
+  - component: {fileID: 1625596031}
   m_Layer: 0
   m_Name: Crotch
   m_TagString: Untagged
@@ -7584,6 +7690,40 @@ PolygonCollider2D:
       - {x: -0.305, y: -2.835}
       - {x: -0.295, y: -2.7549999}
       - {x: -0.315, y: -2.645}
+--- !u!114 &1625596031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625596025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c55c83d4c4dd1145ad5fbbab3c3df36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlphaTolerance: 20
+  DistanceThreshold: 8
+  Scale: 1
+  Decompose: 0
+  RunInPlayMode: 1
+  UseCache: 0
+  lastAlphaTolerance: 20
+  lastScale: 1
+  lastDistanceThreshold: 8
+  lastDecompose: 0
+  lastSprite: {fileID: 21300000, guid: 9ddefaff8f886654fabc78648216d242, type: 3}
+  lastRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1413
+    height: 1521
+  lastOffset: {x: 706.5, y: 760.5}
+  lastPixelsPerUnit: 100
+  lastFlipX: 0
+  lastFlipY: 0
+  editorCache: []
 --- !u!1 &1646397394
 GameObject:
   m_ObjectHideFlags: 0
@@ -7952,6 +8092,7 @@ GameObject:
   - component: {fileID: 1766001369}
   - component: {fileID: 1766001370}
   - component: {fileID: 1766001371}
+  - component: {fileID: 1766001372}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -8164,6 +8305,40 @@ PolygonCollider2D:
       - {x: -1.005, y: 2.845}
       - {x: -1.005, y: 3.0349998}
       - {x: -1.025, y: 3.0449998}
+--- !u!114 &1766001372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766001366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c55c83d4c4dd1145ad5fbbab3c3df36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlphaTolerance: 20
+  DistanceThreshold: 8
+  Scale: 1
+  Decompose: 0
+  RunInPlayMode: 1
+  UseCache: 0
+  lastAlphaTolerance: 20
+  lastScale: 1
+  lastDistanceThreshold: 8
+  lastDecompose: 0
+  lastSprite: {fileID: 21300000, guid: 7b3b4d390f6b26147990523c060ec3da, type: 3}
+  lastRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1413
+    height: 1521
+  lastOffset: {x: 706.5, y: 760.5}
+  lastPixelsPerUnit: 100
+  lastFlipX: 0
+  lastFlipY: 0
+  editorCache: []
 --- !u!1 &1769019435
 GameObject:
   m_ObjectHideFlags: 0

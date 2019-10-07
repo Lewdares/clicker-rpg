@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AdvancedPolygonCollider\Script\AdvancedPolygonCollider.cs" />
+     <Compile Include="Assets\AdvancedPolygonCollider\Script\AdvancedPolygonColliderUtilities.cs" />
      <Compile Include="Assets\MenuAssets\HighlightButton.cs" />
      <Compile Include="Assets\Scripts\CGDisappear.cs" />
      <Compile Include="Assets\Scripts\ClothesClicked.cs" />
@@ -106,6 +108,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\AdvancedPolygonCollider\Readme.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
