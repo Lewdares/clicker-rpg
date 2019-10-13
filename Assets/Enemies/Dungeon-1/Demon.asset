@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d77685d70a97214d9f524280719fb54, type: 3}
+  m_Name: Demon
+  m_EditorClassIdentifier: 
+  name: Demon
+  body: {fileID: 21300000, guid: c29f26caa2958f1499d7362df6e6ea52, type: 3}
+  scale: 0.3197618
+  Ypos: 50
+  pos: {x: -2.62, y: 1.97, z: 0}
+  chest:
+  - {fileID: 21300000, guid: eaf80ea15338ed846a672c90fff18d93, type: 3}
+  - {fileID: 21300000, guid: 73b88409a4752d54ba0305efa783dae5, type: 3}
+  - {fileID: 21300000, guid: fe370cc291b866447a109e442bc11d1a, type: 3}
+  arm:
+  - {fileID: 21300000, guid: c3933d1305eb8ff42bd4d26613c4750a, type: 3}
+  - {fileID: 21300000, guid: 0bca7dc12354a2647b9f24c15c199031, type: 3}
+  - {fileID: 21300000, guid: c29cd05c3c6c7c5459cdbfb1d2c60e91, type: 3}
+  leg:
+  - {fileID: 21300000, guid: de610543b2b68a64589c48e7b9ecac1f, type: 3}
+  - {fileID: 21300000, guid: 1e3544469a254b74da88120c453f2978, type: 3}
+  - {fileID: 21300000, guid: 227aefdbd2b013442bb21fbb4960e614, type: 3}
+  head: []
+  crotch:
+  - {fileID: 21300000, guid: 70ecc46f2a33fa442beecc9b98bd48f1, type: 3}
+  - {fileID: 21300000, guid: bbbf922cdf00b85419fb2e1369856dc4, type: 3}
+  - {fileID: 21300000, guid: d64539d2856ae2f44a29309b1bccf0da, type: 3}

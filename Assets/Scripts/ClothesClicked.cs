@@ -8,6 +8,7 @@ public class ClothesClicked : MonoBehaviour
 	public GameObject statusText;
 	public GameObject hpText;
 	public GameObject spriteEnemy;
+	public GameObject theEnemy;
 	public GameObject pulsatingBox;
 	public GameObject cgWindow;
 	public int RandomChance = 15;
@@ -22,6 +23,7 @@ public class ClothesClicked : MonoBehaviour
     void Start()
     {
         shieldBlocked = GameObject.Find("shieldBlocked");
+		theEnemy = GameObject.Find("Enemy");
     }
 	
 	// This code happens when an user hits a piece of clothing
@@ -32,6 +34,7 @@ public class ClothesClicked : MonoBehaviour
 		hpText.GetComponent<Text>().color = Color.white;
 		GlobalCookies.expNumber = GlobalCookies.expNumber + 1;
 		spriteEnemy.GetComponent<Animation>().Play("GetHit");
+		theEnemy.GetComponent<Animation>().Play("NewGetHit");
 	}
 
 	// This code happens when an user hits a piece of clothing and it happens to be a critical hit
@@ -44,6 +47,7 @@ public class ClothesClicked : MonoBehaviour
 		hpText.GetComponent<Text>().color = Color.red;
 		GlobalCookies.expNumber = GlobalCookies.expNumber + 5;
 		spriteEnemy.GetComponent<Animation>().Play("GetHit");
+		theEnemy.GetComponent<Animation>().Play("NewGetHit");
 	}
 	
 	// This code happens when an user hits a piece of clothing with fire
@@ -54,6 +58,7 @@ public class ClothesClicked : MonoBehaviour
 		hpText.GetComponent<Text>().color = new Color(1.0f, 0.64f, 0.0f);
 		GlobalCookies.expNumber = GlobalCookies.expNumber + 1;
 		spriteEnemy.GetComponent<Animation>().Play("GetHit");
+		theEnemy.GetComponent<Animation>().Play("NewGetHit");
 	}
 
     // Update is called once per frame

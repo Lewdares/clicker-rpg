@@ -21,7 +21,11 @@ public class CreateEnemy : MonoBehaviour
 	public static int DungeonLevel = 1;
 	public static int DungeonBestScore = 1;
 	
+	public List<Enemies> EnemyListD1;
 	public Enemies enemy;
+	
+	private GameObject OldSprites;
+	private GameObject NewSprite;
 	
 	
     // Start is called before the first frame update
@@ -51,6 +55,9 @@ public class CreateEnemy : MonoBehaviour
 	
 	public void CreateAnEnemy()
 	{
+		var enemyspriteset = GameObject.Find("Enemy");
+		
+		enemyspriteset.gameObject.GetComponent<Animation>().Play("Runaway");
 		this.gameObject.GetComponent<Animation>().Play("EnemyRunAway");
 		StartCoroutine ( SpawnNew());
 		
@@ -60,15 +67,48 @@ public class CreateEnemy : MonoBehaviour
 	{
 		yield return new WaitForSeconds (1.5f);
 		
+		var randomSelection = Random.Range(0,EnemyListD1.Count);
+		enemy = EnemyListD1[randomSelection];
+		
 		var randomNum = Random.Range(0,SpriteSelection.Count);
 		this.gameObject.GetComponent<SpriteRenderer>().sprite = enemy.body;
 		
-		DestroyClothes chestcode = chest.GetComponent<DestroyClothes>();
-		DestroyCrotch crotchcode = crotch.GetComponent<DestroyCrotch>();
-		DestroyHand armcode = hand.GetComponent<DestroyHand>();
-		DestroyLeg legcode = leg.GetComponent<DestroyLeg>();
-		DestroyHead headcode = head.GetComponent<DestroyHead>();
+		OldSprites = GameObject.Find("Enemy/testingSprite");
+		NewSprite = GameObject.Find("Enemy/testingSprite/" + enemy.name);
 		
+		for(int i=0; i< OldSprites.transform.childCount; i++)
+		{
+			var child = OldSprites.transform.GetChild(i).gameObject;
+			if(child != null)
+				child.SetActive(false);
+		}
+		
+		NewSprite.SetActive(true);
+		for(int i=0; i< NewSprite.transform.childCount; i++)
+		{
+			var child = NewSprite.transform.GetChild(i).gameObject;
+			if(child != null)
+				child.SetActive(true);
+		}
+		
+		if (chest != null) { DestroyClothes chestcode = chest.GetComponent<DestroyClothes>(); }
+		if (crotch != null) { DestroyCrotch crotchcode = crotch.GetComponent<DestroyCrotch>(); }
+		if (hand != null) { DestroyHand armcode = hand.GetComponent<DestroyHand>(); }
+		if (leg != null) { DestroyLeg legcode = leg.GetComponent<DestroyLeg>(); }
+		if (head != null) { DestroyHead headcode = head.GetComponent<DestroyHead>(); }
+		
+        chest = GameObject.Find("Enemy/testingSprite/" + enemy.name + "/Chest");
+		crotch = GameObject.Find("Enemy/testingSprite/" + enemy.name + "/Crotch");
+		hand = GameObject.Find("Enemy/testingSprite/" + enemy.name + "/Hand");
+		head = GameObject.Find("Enemy/testingSprite/" + enemy.name + "/Head");
+		leg = GameObject.Find("Enemy/testingSprite/" + enemy.name + "/Leg");
+		
+		var enemyspriteset = GameObject.Find("Enemy");
+		this.gameObject.transform.localScale = new Vector3(enemy.scale,enemy.scale,enemy.scale);
+		enemyspriteset.gameObject.transform.position = new Vector3(0,0,0);
+		this.gameObject.transform.position = enemy.pos;
+		
+		/*
 		if (enemy.chest.Count > 0) {
 		chest.GetComponent<SpriteRenderer>().sprite = enemy.chest[0];
 		
@@ -104,7 +144,7 @@ public class CreateEnemy : MonoBehaviour
 		headcode.halfSprite = enemy.head[1];
 		headcode.almostSprite = enemy.head[2];
 		}
-		
+		*/
 		
 		if(randomNum == 0) {
 			EnemyName = "sexy spider assasain";
@@ -119,7 +159,8 @@ public class CreateEnemy : MonoBehaviour
 			EnemyName = "unknown enemy";
 		}
 		
-		this.gameObject.GetComponent<Animation>().Play("NewEnemyAppears");
+		enemyspriteset.gameObject.GetComponent<Animation>().Play("NewEnemyAppears");
+		this.gameObject.GetComponent<Animation>().Play("NewEnemyFadesIn");
 		
 		var crotchLikeness = Random.Range(0,10);
 		var handLikeness = Random.Range(0,10);
@@ -133,38 +174,38 @@ public class CreateEnemy : MonoBehaviour
 		In the case no clothespiece has been picked out, the character will only wear a chestpiece,
 		with 50% extra hit points.*/
 		
-		if (crotchLikeness >= 3) {
-			crotch.gameObject.SetActive(true);
+		if (crotchLikeness >= 3 && (crotch != null)) {
+			crotch.SetActive(true);
 			GlobalCookies.HPCount[1] = oldHitPoints[1] + Random.Range(22,37);
 			oldHitPoints[1] = GlobalCookies.HPCount[1];
 			atLeastOne = true;
 		}
-		if (handLikeness >= 4) {
-			hand.gameObject.SetActive(true);
+		if (handLikeness >= 4  && (hand != null)) {
+			hand.SetActive(true);
 			GlobalCookies.HPCount[2] = oldHitPoints[2] + Random.Range(22,37);
 			oldHitPoints[2] = GlobalCookies.HPCount[2];
 			atLeastOne = true;
 		}
-		if (headLikeness >= 6) {
-			head.gameObject.SetActive(true);
+		if (headLikeness >= 6  && (head != null)) {
+			head.SetActive(true);
 			GlobalCookies.HPCount[3] = oldHitPoints[3] + Random.Range(22,37);
 			oldHitPoints[3] = GlobalCookies.HPCount[3];
 			atLeastOne = true;
 		}
-		if (legLikeness >= 5) {
-			leg.gameObject.SetActive(true);
+		if (legLikeness >= 5  && (leg != null)) {
+			leg.SetActive(true);
 			GlobalCookies.HPCount[4] = oldHitPoints[4] + Random.Range(22,37);
 			oldHitPoints[4] = GlobalCookies.HPCount[4];
 			atLeastOne = true;
 		}
-		if (chestLikeness >= 2 && atLeastOne == true) {
-			chest.gameObject.SetActive(true);
+		if (chestLikeness >= 2 && atLeastOne == true  && (chest != null)) {
+			chest.SetActive(true);
 			GlobalCookies.HPCount[0] = oldHitPoints[0] + Random.Range(22,37);
 			oldHitPoints[0] = GlobalCookies.HPCount[0];
 			atLeastOne = true;
 		}
-		else if (atLeastOne == false){
-			chest.gameObject.SetActive(true);
+		else if (atLeastOne == false  && (chest != null)){
+			chest.SetActive(true);
 			GlobalCookies.HPCount[0] = oldHitPoints[0] + Random.Range(22,37) + 50;
 			oldHitPoints[0] = GlobalCookies.HPCount[0];
 		}
