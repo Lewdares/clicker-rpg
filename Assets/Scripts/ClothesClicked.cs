@@ -135,9 +135,9 @@ public class ClothesClicked : MonoBehaviour
 					MouseCursor.isSwordActive = false;
 					MouseCursor.isCharmActive = false;
 					Cursor.visible = true;
+					
 					//TO-DO: bring cursor prev active to original place
-					EnableSwordCursor.mouseCharm.transform.position = new Vector3(EnableSwordCursor.charmHolder.transform.position.x, this.transform.position.y, this.transform.position.z);
-					EnableSwordCursor.mouseSword.transform.position = new Vector3(EnableSwordCursor.swordHolder.transform.position.x, this.transform.position.y, this.transform.position.z);
+					EnableSwordCursor.mouseCharm.transform.position = new Vector3(EnableSwordCursor.charmHolder.transform.position.x, EnableSwordCursor.charmHolder.transform.position.y, this.transform.position.z);
 					
 					hpText.SetActive(true);
 					MPBar.value = MPBar.value - 0.30f;
