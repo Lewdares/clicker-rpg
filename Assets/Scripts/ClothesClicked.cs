@@ -18,12 +18,16 @@ public class ClothesClicked : MonoBehaviour
 	public Slider MPBar;
 	public GameObject shieldBlocked;
 	public static bool protectingWithShield = false;
+	public GameObject SFXHandler;
+	public SFXScript SFX;
 	
     // Start is called before the first frame update
     void Start()
     {
         shieldBlocked = GameObject.Find("shieldBlocked");
 		theEnemy = GameObject.Find("Enemy");
+		SFXHandler = GameObject.Find("SFXObject");
+		SFX = SFXHandler.GetComponent<SFXScript>();
     }
 	
 	// This code happens when an user hits a piece of clothing
@@ -65,6 +69,7 @@ public class ClothesClicked : MonoBehaviour
     void OnMouseDown()
     {
 		if (MouseCursor.isSwordActive == true) {
+			SFX.PlayAttack();
 			int critChance = Random.Range(0, RandomChance);
 			if (this.gameObject.name == "Chest") {
 				if (GlobalCookies.HPCount[0] != 0) {
@@ -147,6 +152,8 @@ public class ClothesClicked : MonoBehaviour
 					statusText.GetComponent<Text>().text = "You charmed the enemy!";
 					statusText.GetComponent<Animation>().Play("TextFade");
 					cgWindow.GetComponent<Animation>().Play("CGStart");
+					SFX.PlayCharm();
+					
 				}
 				else {
 					hpText.SetActive(true);
@@ -156,6 +163,7 @@ public class ClothesClicked : MonoBehaviour
 					hpText.GetComponent<Text>().color = Color.yellow;
 					statusText.GetComponent<Text>().text = "Her HP is not low enough to charm her!";
 					statusText.GetComponent<Animation>().Play("TextFade");
+					SFX.PlayMiss();
 				}
 			}
 		}
@@ -165,11 +173,13 @@ public class ClothesClicked : MonoBehaviour
 				protectingWithShield = true;
 				shieldBlocked.GetComponent<Animation>().Play("shieldBlocked");
 				MPBar.value = MPBar.value - 0.15f;
+				SFX.PlayShield();
 			}
 		}
 		else if (MouseCursor.isFireActive == true) {
 			if (MPBar.value >= 0.20f) {
 				MPBar.value = MPBar.value - 0.20f;
+				SFX.PlayFire();
 				int damageDealtByFire = Random.Range(8,15) + OnButtonClick.AttackPower;
 				if (this.gameObject.name == "Chest") {
 					if (GlobalCookies.HPCount[0] != 0) {

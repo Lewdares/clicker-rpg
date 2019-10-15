@@ -3,7 +3,23 @@ guid: 1453495e2ad1c3d46978551e1f939037
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - statusText: {instanceID: 0}
+  - hpText: {instanceID: 0}
+  - spriteEnemy: {instanceID: 0}
+  - theEnemy: {instanceID: 0}
+  - pulsatingBox: {instanceID: 0}
+  - cgWindow: {instanceID: 0}
+  - ExpBar: {instanceID: 0}
+  - AttackBar: {instanceID: 0}
+  - HPBar: {instanceID: 0}
+  - MPBar: {instanceID: 0}
+  - shieldBlocked: {instanceID: 0}
+  - MusicSource: {instanceID: 0}
+  - MusicCharm: {fileID: 8300000, guid: 6f680729c7f8069439800039493da7fd, type: 3}
+  - MusicShield: {fileID: 8300000, guid: 55572433af82d0e42bc11c04e524702e, type: 3}
+  - MusicAttack: {fileID: 8300000, guid: e97b3c121f2ebbc418e4f8d545373074, type: 3}
+  - MusicFire: {fileID: 8300000, guid: 4a76b2aa35653f64d9c727653d8f432f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
