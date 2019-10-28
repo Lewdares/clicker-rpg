@@ -68,149 +68,152 @@ public class ClothesClicked : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
-		if (MouseCursor.isSwordActive == true) {
-			SFX.PlayAttack();
-			int critChance = Random.Range(0, RandomChance);
-			if (this.gameObject.name == "Chest") {
-				if (GlobalCookies.HPCount[0] != 0) {
-					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[0] >= OnButtonClick.CritPower) {
-						GlobalCookies.HPCount[0] -= OnButtonClick.CritPower;
-						CriticalMinusHP();
-					}
-					else {
-						GlobalCookies.HPCount[0] -= OnButtonClick.AttackPower;
-						MinusHP();
-					}
-				}
-			}
-			else if (this.gameObject.name == "Crotch") {
-				if (GlobalCookies.HPCount[1] != 0) {
-					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[1] >= OnButtonClick.CritPower) {
-						GlobalCookies.HPCount[1] -= OnButtonClick.CritPower;
-						CriticalMinusHP();
-					}
-					else {
-						GlobalCookies.HPCount[1] -= OnButtonClick.AttackPower;
-						MinusHP();
-					}
-				}
-			}
-			else if (this.gameObject.name == "Hand") {
-				if (GlobalCookies.HPCount[2] != 0) {
-					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[2] >= OnButtonClick.CritPower) {
-						GlobalCookies.HPCount[2] -= OnButtonClick.CritPower;
-						CriticalMinusHP();
-					}
-					else {
-						GlobalCookies.HPCount[2] -= OnButtonClick.AttackPower;
-						MinusHP();
-					}
-				}
-			}
-			else if (this.gameObject.name == "Head") {
-				if (GlobalCookies.HPCount[3] != 0) {
-					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[3] >= OnButtonClick.CritPower) {
-						GlobalCookies.HPCount[3] -= OnButtonClick.CritPower;
-						CriticalMinusHP();
-					}
-					else {
-						GlobalCookies.HPCount[3] -= OnButtonClick.AttackPower;
-						MinusHP();
-					}
-				}
-			}
-			else if (this.gameObject.name == "Leg") {
-				if (GlobalCookies.HPCount[4] != 0) {
-					if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[4] >= OnButtonClick.CritPower) {
-						GlobalCookies.HPCount[4] -= OnButtonClick.CritPower;
-						CriticalMinusHP();
-					}
-					else {
-						GlobalCookies.HPCount[4] -= OnButtonClick.AttackPower;
-						MinusHP();
-					}
-				}
-			}
-		}
-		else if (MouseCursor.isCharmActive == true) {
-			if (MPBar.value >= 0.25f) {
-				int TotalHP = GlobalCookies.HPCount[0] + GlobalCookies.HPCount[1] + GlobalCookies.HPCount[2] + GlobalCookies.HPCount[3] + GlobalCookies.HPCount[4];
-				if (TotalHP <= 35) {
-					//make cursor appear again
-					MouseCursor.isSwordActive = false;
-					MouseCursor.isCharmActive = false;
-					Cursor.visible = true;
-					
-					//TO-DO: bring cursor prev active to original place
-					EnableSwordCursor.mouseCharm.transform.position = new Vector3(EnableSwordCursor.charmHolder.transform.position.x, EnableSwordCursor.charmHolder.transform.position.y, this.transform.position.z);
-					
-					hpText.SetActive(true);
-					MPBar.value = MPBar.value - 0.30f;
-					hpText.GetComponent<Text>().text = "CHARMED!";
-					hpText.GetComponent<Animation>().Play("PunchedFade");
-					hpText.GetComponent<Text>().color = Color.magenta;
-					statusText.GetComponent<Text>().text = "You charmed the enemy!";
-					statusText.GetComponent<Animation>().Play("TextFade");
-					cgWindow.GetComponent<Animation>().Play("CGStart");
-					SFX.PlayCharm();
-					
-				}
-				else {
-					hpText.SetActive(true);
-					MPBar.value = MPBar.value - 0.30f;
-					hpText.GetComponent<Text>().text = "MISS!";
-					hpText.GetComponent<Animation>().Play("PunchedFade");
-					hpText.GetComponent<Text>().color = Color.yellow;
-					statusText.GetComponent<Text>().text = "Her HP is not low enough to charm her!";
-					statusText.GetComponent<Animation>().Play("TextFade");
-					SFX.PlayMiss();
-				}
-			}
-		}
-		else if (MouseCursor.isShieldActive == true) {
-			if (MPBar.value >= 0.15f && protectingWithShield == false) {	
-				Debug.Log("test for shield");
-				protectingWithShield = true;
-				shieldBlocked.GetComponent<Animation>().Play("shieldBlocked");
-				MPBar.value = MPBar.value - 0.15f;
-				SFX.PlayShield();
-			}
-		}
-		else if (MouseCursor.isFireActive == true) {
-			if (MPBar.value >= 0.20f) {
-				MPBar.value = MPBar.value - 0.20f;
-				SFX.PlayFire();
-				int damageDealtByFire = Random.Range(8,15) + OnButtonClick.AttackPower;
+		if (GlobalCookies.IsPaused == false) {
+			if (MouseCursor.isSwordActive == true) {
+				SFX.PlayAttack();
+				int critChance = Random.Range(0, RandomChance);
 				if (this.gameObject.name == "Chest") {
 					if (GlobalCookies.HPCount[0] != 0) {
-						GlobalCookies.HPCount[0] -= damageDealtByFire;
+						if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[0] >= OnButtonClick.CritPower) {
+							GlobalCookies.HPCount[0] -= OnButtonClick.CritPower;
+							CriticalMinusHP();
+						}
+						else {
+							GlobalCookies.HPCount[0] -= OnButtonClick.AttackPower;
+							MinusHP();
+						}
 					}
 				}
 				else if (this.gameObject.name == "Crotch") {
 					if (GlobalCookies.HPCount[1] != 0) {
-						GlobalCookies.HPCount[1] -= damageDealtByFire;
+						if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[1] >= OnButtonClick.CritPower) {
+							GlobalCookies.HPCount[1] -= OnButtonClick.CritPower;
+							CriticalMinusHP();
+						}
+						else {
+							GlobalCookies.HPCount[1] -= OnButtonClick.AttackPower;
+							MinusHP();
+						}
 					}
 				}
 				else if (this.gameObject.name == "Hand") {
 					if (GlobalCookies.HPCount[2] != 0) {
-						GlobalCookies.HPCount[2] -= damageDealtByFire;
+						if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[2] >= OnButtonClick.CritPower) {
+							GlobalCookies.HPCount[2] -= OnButtonClick.CritPower;
+							CriticalMinusHP();
+						}
+						else {
+							GlobalCookies.HPCount[2] -= OnButtonClick.AttackPower;
+							MinusHP();
+						}
 					}
 				}
 				else if (this.gameObject.name == "Head") {
 					if (GlobalCookies.HPCount[3] != 0) {
-						GlobalCookies.HPCount[3] -= damageDealtByFire;
+						if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[3] >= OnButtonClick.CritPower) {
+							GlobalCookies.HPCount[3] -= OnButtonClick.CritPower;
+							CriticalMinusHP();
+						}
+						else {
+							GlobalCookies.HPCount[3] -= OnButtonClick.AttackPower;
+							MinusHP();
+						}
 					}
 				}
 				else if (this.gameObject.name == "Leg") {
 					if (GlobalCookies.HPCount[4] != 0) {
-						GlobalCookies.HPCount[4] -= damageDealtByFire;
+						if (critChance == (RandomChance - 1) && GlobalCookies.HPCount[4] >= OnButtonClick.CritPower) {
+							GlobalCookies.HPCount[4] -= OnButtonClick.CritPower;
+							CriticalMinusHP();
+						}
+						else {
+							GlobalCookies.HPCount[4] -= OnButtonClick.AttackPower;
+							MinusHP();
+						}
 					}
 				}
-			FireHP(damageDealtByFire);
 			}
-		}
-		else {
-			pulsatingBox.GetComponent<Animation>().Play("UseYourTools");
+			else if (MouseCursor.isCharmActive == true) {
+				if (MPBar.value >= 0.25f) {
+					int TotalHP = GlobalCookies.HPCount[0] + GlobalCookies.HPCount[1] + GlobalCookies.HPCount[2] + GlobalCookies.HPCount[3] + GlobalCookies.HPCount[4];
+					if (TotalHP <= 35) {
+						//make cursor appear again
+						MouseCursor.isSwordActive = false;
+						MouseCursor.isCharmActive = false;
+						Cursor.visible = true;
+						
+						//TO-DO: bring cursor prev active to original place
+						EnableSwordCursor.mouseCharm.transform.position = new Vector3(EnableSwordCursor.charmHolder.transform.position.x, EnableSwordCursor.charmHolder.transform.position.y, this.transform.position.z);
+						
+						GlobalCookies.IsPaused = true;
+						hpText.SetActive(true);
+						MPBar.value = MPBar.value - 0.30f;
+						hpText.GetComponent<Text>().text = "CHARMED!";
+						hpText.GetComponent<Animation>().Play("PunchedFade");
+						hpText.GetComponent<Text>().color = Color.magenta;
+						statusText.GetComponent<Text>().text = "You charmed the enemy!";
+						statusText.GetComponent<Animation>().Play("TextFade");
+						cgWindow.GetComponent<Animation>().Play("CGStart");
+						SFX.PlayCharm();
+						
+					}
+					else {
+						hpText.SetActive(true);
+						MPBar.value = MPBar.value - 0.30f;
+						hpText.GetComponent<Text>().text = "MISS!";
+						hpText.GetComponent<Animation>().Play("PunchedFade");
+						hpText.GetComponent<Text>().color = Color.yellow;
+						statusText.GetComponent<Text>().text = "Her HP is not low enough to charm her!";
+						statusText.GetComponent<Animation>().Play("TextFade");
+						SFX.PlayMiss();
+					}
+				}
+			}
+			else if (MouseCursor.isShieldActive == true) {
+				if (MPBar.value >= 0.15f && protectingWithShield == false) {	
+					Debug.Log("test for shield");
+					protectingWithShield = true;
+					shieldBlocked.GetComponent<Animation>().Play("shieldBlocked");
+					MPBar.value = MPBar.value - 0.15f;
+					SFX.PlayShield();
+				}
+			}
+			else if (MouseCursor.isFireActive == true) {
+				if (MPBar.value >= 0.20f) {
+					MPBar.value = MPBar.value - 0.20f;
+					SFX.PlayFire();
+					int damageDealtByFire = Random.Range(8,15) + OnButtonClick.AttackPower;
+					if (this.gameObject.name == "Chest") {
+						if (GlobalCookies.HPCount[0] != 0) {
+							GlobalCookies.HPCount[0] -= damageDealtByFire;
+						}
+					}
+					else if (this.gameObject.name == "Crotch") {
+						if (GlobalCookies.HPCount[1] != 0) {
+							GlobalCookies.HPCount[1] -= damageDealtByFire;
+						}
+					}
+					else if (this.gameObject.name == "Hand") {
+						if (GlobalCookies.HPCount[2] != 0) {
+							GlobalCookies.HPCount[2] -= damageDealtByFire;
+						}
+					}
+					else if (this.gameObject.name == "Head") {
+						if (GlobalCookies.HPCount[3] != 0) {
+							GlobalCookies.HPCount[3] -= damageDealtByFire;
+						}
+					}
+					else if (this.gameObject.name == "Leg") {
+						if (GlobalCookies.HPCount[4] != 0) {
+							GlobalCookies.HPCount[4] -= damageDealtByFire;
+						}
+					}
+				FireHP(damageDealtByFire);
+				}
+			}
+			else {
+				pulsatingBox.GetComponent<Animation>().Play("UseYourTools");
+			}
 		}
     }
 }

@@ -49,11 +49,11 @@ public class OnButtonClick : MonoBehaviour
 			
 		}
 		
-		if (TotalHP != 0 && AttackBar.value != 1) {
+		if (TotalHP != 0 && AttackBar.value != 1 && GlobalCookies.IsPaused == false) {
 			AttackBar.value = AttackBar.value + 0.008f;
 			
 		}
-		else if (AttackBar.value == 1) {
+		else if (AttackBar.value == 1 && GlobalCookies.IsPaused == false) {
 			if (ClothesClicked.protectingWithShield == false) {
 				AttackBar.value = 0;
 				float enemyForce = Random.Range(1.80f, 5.14f);
@@ -71,9 +71,10 @@ public class OnButtonClick : MonoBehaviour
 			}
 		}
 		
-		if (HPBar.value <= 0) {
+		if (HPBar.value <= 0 && GlobalCookies.IsPaused == false) {
 			Debug.Log("youre dead lmao");
 			youFainted.SetActive(true);
+			GlobalCookies.IsPaused = true;
 		}
 	}
 }

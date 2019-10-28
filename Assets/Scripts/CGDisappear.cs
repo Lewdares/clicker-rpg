@@ -37,5 +37,6 @@ public class CGDisappear : MonoBehaviour
 		//message
 		statusText.GetComponent<Text>().text = "The enemy ran away! You recovered some Mana!";
 		statusText.GetComponent<Animation>().Play("TextFade");
+		GlobalCookies.IsPaused = false;
 	}
 }

@@ -18,36 +18,38 @@ public class MouseCursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (isSwordActive == true){
-			if (this.gameObject.name == "sword") {
-				Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				transform.position = cursorPos;
-				Cursor.visible = false;
+		if (GlobalCookies.IsPaused == false){
+			if (isSwordActive == true){
+				if (this.gameObject.name == "sword") {
+					Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+					transform.position = cursorPos;
+					Cursor.visible = false;
+				}
 			}
-		}
-		else if (isCharmActive == true) {
-			if (this.gameObject.name == "charm") {
-				Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				transform.position = cursorPos;
-				Cursor.visible = false;
+			else if (isCharmActive == true) {
+				if (this.gameObject.name == "charm") {
+					Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+					transform.position = cursorPos;
+					Cursor.visible = false;
+				}
 			}
-		}
-		else if (isShieldActive == true) {
-			if (this.gameObject.name == "shield") {
-				Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				transform.position = cursorPos;
-				Cursor.visible = false;
+			else if (isShieldActive == true) {
+				if (this.gameObject.name == "shield") {
+					Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+					transform.position = cursorPos;
+					Cursor.visible = false;
+				}
 			}
-		}
-		else if (isFireActive == true) {
-			if (this.gameObject.name == "fire") {
-				Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				transform.position = cursorPos;
-				Cursor.visible = false;
+			else if (isFireActive == true) {
+				if (this.gameObject.name == "fire") {
+					Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+					transform.position = cursorPos;
+					Cursor.visible = false;
+				}
 			}
-		}
-		else {
-			Cursor.visible = true;
+			else {
+				Cursor.visible = true;
+			}
 		}
     }
 }

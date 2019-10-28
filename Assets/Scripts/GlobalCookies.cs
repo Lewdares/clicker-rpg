@@ -15,6 +15,7 @@ public class GlobalCookies : MonoBehaviour
 	public GameObject HandDisplay;
 	public GameObject HeadDisplay;
 	public GameObject LegDisplay;
+	public static bool IsPaused = false;
 	
 	public static int levelNumber = 0;
 	public static float expNumber = 0.0f;

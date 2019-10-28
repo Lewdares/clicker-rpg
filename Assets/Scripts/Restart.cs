@@ -9,6 +9,7 @@ public class Restart : MonoBehaviour
 		// Some variables that need to be reset before restarting.
 		CreateEnemy.DungeonFloor = 1;
 		CreateEnemy.DungeonLevel = 1;
+		GlobalCookies.IsPaused = false;
 		
 		// Finally, restarts the scene.
 		var scene = SceneManager.GetActiveScene();
